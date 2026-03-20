@@ -112,7 +112,7 @@ get_health_status() — получение статуса здоровья
 
 ## Сценарий 5:  Ошибки валидации
  
-<img width="1518" height="1308" alt="imange-1-5" src="src/lab1/img/post_pat_2.png" />
+<img width="1518" height="1308" alt="imange-1-5" src="src/lab1/img/validatsia.png" />
 
 
 

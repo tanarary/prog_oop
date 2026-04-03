@@ -71,7 +71,7 @@ PatientRegistry — это контейнерный класс для управ
 
 ## Сценарий 3.2: ДОБАВЛЕНИЕ ПАЦИЕНТОВ (add)
 
-<img width="1482" height="620" alt="imange-1-1" src="src/lab2/img/3.1.png" />
+<img width="1482" height="620" alt="imange-1-1" src="/src/lab2/img/3.1.png" />
 
  
 Что происходит: В коллекцию последовательно добавляются 4 пациента через метод add()
@@ -100,7 +100,7 @@ PatientRegistry — это контейнерный класс для управ
 Результат: Количество пациентов уменьшается на 1
 Демонстрация: Метод remove() корректно удаляет объект
 
-<img width="1596" height="994" alt="imange1-2" src="src/lab2/img/3.2.png" />
+<img width="1596" height="994" alt="imange1-2" src="/src/lab2/img/3.2.png" />
 
 ## Сценарий 3.6: ПОЛУЧЕНИЕ ВСЕХ ПАЦИЕНТОВ (get_all)
 
@@ -108,7 +108,7 @@ PatientRegistry — это контейнерный класс для управ
 Результат: Получен список из 3 пациентов
 Важно: Возвращается копия, а не оригинальный список (защита данных)
 
-<img width="1596" height="994" alt="imange1-2" src="src/lab2/img/3.6.png" />
+<img width="1596" height="994" alt="imange1-2" src="/src/lab2/img/3.6.png" />
 
 
 ## ЗАДАНИЕ 4: ПОИСК И СПЕЦИАЛЬНЫЕ МЕТОДЫ
@@ -136,7 +136,7 @@ PatientRegistry — это контейнерный класс для управ
 Результат: Возвращается список пациентов, содержащих подстроку в ФИО
 Особенность: Поиск регистронезависимый
 
-<img width="1466" height="556" alt="imange-1-4" src="src/lab2/img/4.1.png" />
+<img width="1466" height="556" alt="imange-1-4" src="/src/lab2/img/4.1.png" />
 
 ## Сценарий 4.3: ДЕМОНСТРАЦИЯ len
 
@@ -150,7 +150,7 @@ PatientRegistry — это контейнерный класс для управ
 Результат: Последовательный вывод всех пациентов с порядковыми номерами
 Магия Python: Срабатывает специальный метод __iter__, делающий коллекцию итерируемой
  
-<img width="1518" height="1308" alt="imange-1-5" src="src/lab2/img/4.2.png" />
+<img width="1518" height="1308" alt="imange-1-5" src="/src/lab2/img/4.2.png" />
 
 
 ## ЗАДАНИЕ 5: ИНДЕКСАЦИЯ, СОРТИРОВКА, ФИЛЬТРАЦИЯ
@@ -167,7 +167,7 @@ registry[-1] - последний пациент
 Результат: Получение объектов Patient по индексам
 Магия Python: Срабатывает специальный метод __getitem__
 
-<img width="1626" height="1288" alt="imange-1-7" src="src/lab2/img/5.1.png" />
+<img width="1626" height="1288" alt="imange-1-7" src="/src/lab2/img/5.1.png" />
 
 ## Сценарий 5.2: УДАЛЕНИЕ ПО ИНДЕКСУ (remove_at)
 
@@ -179,13 +179,13 @@ registry[-1] - последний пациент
 Количество уменьшилось с 6 до 5
 Преимущество: Удаление без знания объекта, только по позиции
 
-<img width="1626" height="1288" alt="imange-1-7" src="src/lab2/img/5.2.png" />
+<img width="1626" height="1288" alt="imange-1-7" src="/src/lab2/img/5.2.png" />
 
 ## Сценарий 5.3: СОРТИРОВКА ПО ФИО (sort_by_name)
 
 Что происходит: Сортировка пациентов в алфавитном порядке по ФИО
 
-<img width="1626" height="1288" alt="imange-1-7" src="src/lab2/img/5.3.png" />
+<img width="1626" height="1288" alt="imange-1-7" src="/src/lab2/img/5.3.png" />
 
 ## Сценарий 5.4: ФИЛЬТРАЦИЯ get_active()
 
@@ -193,7 +193,7 @@ registry[-1] - последний пациент
 Результат: Новая коллекция с активными пациентами (исключены выписанные)
 Особенность: Оригинальная коллекция не изменяется
 
-<img width="1626" height="1288" alt="imange-1-7" src="src/lab2/img/5.4.png" />
+<img width="1626" height="1288" alt="imange-1-7" src="/src/lab2/img/5.4.png" />
 
 ## Сценарий 5.5: ОПЕРАТОР in
 
@@ -217,7 +217,4 @@ registry[-1] - последний пациент
 
 После очистки: 0 пациентов
 
-
-<img width="1626" height="1288" alt="imange-1-7" src="src/lab2/img/5.5.png" />
-
-\
+<img width="1518" height="1308" alt="imange-1-5" src="/src/lab2/img/5.5_ppp.png" />

@@ -1,0 +1,117 @@
+
+from base import Patient
+from models import EmergencyPatient, ChronicPatient
+from datetime import datetime, timedelta
+
+
+def print_header(title):
+    print("\n" + "=" * 70)
+    print(f"  {title}")
+    print("=" * 70)
+
+
+# СЦЕНАРИЙ 1: НАСЛЕДОВАНИЕ
+def scenario_1_inheritance():
+    print_header("СЦЕНАРИЙ 1: НАСЛЕДОВАНИЕ")
+    
+    # Обычный пациент
+    print("\n1. Обычный пациент (базовый класс):")
+    p1 = Patient("Иванов Иван Иванович", 30, "A+", "ОРВИ", 36.6)
+    print(f"   {p1}")
+    
+    # Экстренный пациент
+    print("\n2. Экстренный пациент (дочерний класс):")
+    p2 = EmergencyPatient("Петрова Анна Сергеевна", 45, "B-", 
+                          "Острый аппендицит", severity=3, temperature=38.5)
+    print(f"   {p2}")
+    print(f"   Новый метод requires_resuscitation(): {p2.requires_resuscitation()}")
+    
+    # Хронический пациент
+    print("\n3. Хронический пациент (дочерний класс):")
+    p3 = ChronicPatient("Сидоров Михаил Петрович", 58, "AB+", 
+                        "Сахарный диабет 2 типа", "Сахарный диабет", 10, temperature=36.8)
+    print(f"   {p3}")
+    print(f"   Новый метод is_in_exacerbation(): {p3.is_in_exacerbation()}")
+    
+    print("\n✅ Наследование работает: дочерние классы имеют все методы родителя + свои")
+
+
+# СЦЕНАРИЙ 2: ПОЛИМОРФИЗМ
+def scenario_2_polymorphism():
+    print_header("СЦЕНАРИЙ 2: ПОЛИМОРФИЗМ")
+    
+    # Создаем список пациентов
+    patients = [
+        Patient("Смирнов Алексей", 25, "B+", "Грипп", 37.0),
+        EmergencyPatient("Кузнецова Ольга", 35, "AB-", "Аппендицит", severity=3, temperature=37.8),
+        ChronicPatient("Морозов Игорь", 52, "0-", "Гипертония", "Гипертония", 8, temperature=36.5)
+    ]
+    
+    # Симулируем дни в больнице
+    patients[0]._admission_date = datetime.now() - timedelta(days=5)
+    patients[1]._admission_date = datetime.now() - timedelta(days=3)
+    patients[2]._admission_date = datetime.now() - timedelta(days=10)
+    
+    print("\nВызов calculate_treatment_cost() для разных типов:")
+    print("-" * 60)
+    
+    for p in patients:
+        cost = p.calculate_treatment_cost()
+        print(f"{type(p).__name__}: {p.full_name} -> {cost:,.2f} руб. (дней: {p.days_in_hospital})")
+    
+    print("\n✅ Полиморфизм: один метод дает разный результат в зависимости от класса")
+
+
+# СЦЕНАРИЙ 3: ИНТЕРФЕЙС
+def scenario_3_interface():
+    print_header("СЦЕНАРИЙ 3: ИНТЕРФЕЙС")
+    
+    # Единая коллекция разных типов
+    patients = [
+        EmergencyPatient("Козлов Дмитрий", 28, "0+", "Травма", severity=4, temperature=37.5),
+        ChronicPatient("Васильева Елена", 42, "A-", "Астма", "Бронхиальная астма", 15, temperature=38.2),
+        Patient("Новиков Андрей", 19, "A+", "Перелом", 36.7)
+    ]
+    
+    print("\nРабота с коллекцией через единый интерфейс:")
+    print("-" * 60)
+    
+    for p in patients:
+        print(f"\n{p.full_name} ({type(p).__name__})")
+        print(f"  Статус здоровья: {p.get_health_status()}")
+        print(f"  Стоимость лечения: {p.calculate_treatment_cost():,.2f} руб.")
+    
+    # Фильтрация по типу
+    print("\n" + "-" * 60)
+    print("Фильтрация по типу (isinstance):")
+    print(f"  Экстренных: {sum(1 for p in patients if isinstance(p, EmergencyPatient))}")
+    print(f"  Хронических: {sum(1 for p in patients if isinstance(p, ChronicPatient))}")
+    print(f"  Обычных: {sum(1 for p in patients if isinstance(p, Patient) and not isinstance(p, (EmergencyPatient, ChronicPatient)))}")
+    
+    print("\n✅ Интерфейс: единые методы get_health_status() и calculate_treatment_cost()")
+
+
+def main():
+    print("\n" + "=" * 70)
+    print("  ЛАБОРАТОРНАЯ РАБОТА №3: НАСЛЕДОВАНИЕ, ПОЛИМОРФИЗМ, ИНТЕРФЕЙС")
+    print("=" * 70)
+    
+    scenario_1_inheritance()
+    scenario_2_polymorphism()
+    scenario_3_interface()
+    
+    print_header("ИТОГ")
+    print("""
+    1. НАСЛЕДОВАНИЕ: Patient ← EmergencyPatient, Patient ← ChronicPatient
+       - Использован super() в конструкторах
+       - Добавлены новые атрибуты и методы
+       - Переопределен __str__
+    
+    2. ПОЛИМОРФИЗМ: метод calculate_treatment_cost() работает по-разному
+    
+    3. ИНТЕРФЕЙС: единые методы get_health_status() и calculate_treatment_cost()
+    """)
+
+
+if __name__ == "__main__":
+    main()

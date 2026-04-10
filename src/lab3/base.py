@@ -1,6 +1,9 @@
-# model.py
+"""
+Базовый класс Patient из лабораторной работы №1
+"""
 import re
 from datetime import datetime
+
 
 def validate_full_name(name):
     """Проверка ФИО"""
@@ -81,9 +84,8 @@ def validate_status(status):
     return status
 
 
-# ============ КЛАСС PATIENT ============
 class Patient:
-    """Класс пациента"""
+    """Базовый класс пациента"""
     
     total_patients = 0
     hospital_name = "Городская больница №1"
@@ -245,6 +247,15 @@ class Patient:
             statuses.append("👨‍⚕️ Направлен к специалисту")
         
         return " | ".join(statuses)
+    
+    # ---------- Метод для полиморфизма ----------
+    def calculate_treatment_cost(self):
+        """
+        Расчет стоимости лечения.
+        Будет переопределен в дочерних классах.
+        """
+        base_cost = 1000 * self.days_in_hospital
+        return base_cost
     
     # ---------- Специальные методы ----------
     def __str__(self):

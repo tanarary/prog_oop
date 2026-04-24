@@ -1,6 +1,4 @@
-"""
-Производные классы от Patient
-"""
+
 from base import Patient
 
 

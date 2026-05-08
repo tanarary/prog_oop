@@ -2,3 +2,4 @@
 Лабораторная работа 2 [lab02](src/lab2/README.md)<br>
 Лабораторная работа 3 [lab03](src/lab3/README.md)<br>
 Лабораторная работа 4 [lab04](src/lab4/README.md)<br>
+Лабораторная работа 5 [lab05](src/lab5/README.md)<br>

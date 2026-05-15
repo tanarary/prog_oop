@@ -99,7 +99,7 @@ TypedCollection — это обобщённая коллекция, котора
 ## 3. Демонстрация работы
 
 ### Сценарий 1: Базовая generic-коллекция
-![alt text](img/image1.png)
+![alt text](/src/lab6/img/sc1.png)
 
 **Описание:** Демонстрация работы TypedCollection с пациентами.
 
@@ -116,7 +116,7 @@ TypedCollection — это обобщённая коллекция, котора
 ---
 
 ### Сценарий 2: Методы find, filter, map
-![alt text](img/image2.png)
+![alt text](/src/lab6/img/sc2.png)
 
 **Описание:** Демонстрация работы функциональных методов коллекции.
 
@@ -141,7 +141,7 @@ TypedCollection — это обобщённая коллекция, котора
 ---
 
 ### Сценарий 3: Протокол Displayable
-![alt text](img/image3.png)
+![alt text](/src/lab6/img/sc3.png)
 
 **Описание:** Демонстрация структурной типизации через протокол Displayable.
 

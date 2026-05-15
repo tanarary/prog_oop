@@ -1,7 +1,3 @@
-"""
-ЛР-5: Расширение коллекции PatientRegistry
-Добавлены методы для функционального стиля
-"""
 
 from typing import List, Optional, Callable, Union, Iterator
 from base import Patient
@@ -45,8 +41,6 @@ class PatientRegistry:
             if patient.patient_id == patient_id:
                 return patient
         return None
-    
-    # ============ НОВЫЕ МЕТОДЫ ДЛЯ ЛР-5 ============
     
     def sort_by(self, key_func: Callable, reverse: bool = False) -> 'PatientRegistry':
         """

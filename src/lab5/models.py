@@ -1,5 +1,10 @@
+import sys
+import os
 
-from base import Patient
+# Добавляем пути для импорта модулей
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from lab3.base import Patient
 
 
 class EmergencyPatient(Patient):

@@ -1,7 +1,4 @@
-"""
-Лабораторная работа №6 - Generics и typing
-Generic-коллекция с поддержкой протоколов
-"""
+
 from typing import TypeVar, Generic, Callable, Optional, List, Protocol, Iterator
 from datetime import datetime
 

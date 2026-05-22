@@ -3,11 +3,14 @@
 Файл содержит стратегии сортировки, фильтрации и обработки объектов Patient
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from typing import List, Callable
-from base import Patient
-from models import EmergencyPatient
-from models import ChronicPatient
+from lab3.base import Patient
+from lab3.models import EmergencyPatient
+from lab3.models import ChronicPatient
 
 
 # ============ СТРАТЕГИИ СОРТИРОВКИ ============
